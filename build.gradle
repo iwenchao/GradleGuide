@@ -1,0 +1,40 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+    //应用到整个项目，包括sub-module
+//    android{
+//        // 编译应用的android-SDK的版本
+//        compileSdkVersion 25
+//        // 构建工具和编译器使用的的版本
+//        buildToolsVersion "25.0.2"
+//    }
+
+
+}
+//为整个项目配置通用的设置，更好的方式是添加属性，通过ext代码块
+ext{
+    // 编译应用的android-SDK的版本
+    compileSdkVersion=25
+    // 构建工具和编译器使用的的版本
+    buildToolsVersion="25.0.2"
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
